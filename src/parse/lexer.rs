@@ -50,8 +50,8 @@ impl<'a> Lexer<'a> {
                     self.emit_contentful(TokenKind::RParen, pos, 1, ")".to_string()); 
                     self.consume();
                 },
-                '.' => {
-                    self.emit_contentful(TokenKind::Period, pos, 1, ".".to_string());
+                '!' => {
+                    self.emit_contentful(TokenKind::Bang, pos, 1, "!".to_string());
                     self.consume();
                 }
                 _ if Self::match_whitespace(peeked, 0) => {

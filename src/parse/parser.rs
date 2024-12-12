@@ -38,7 +38,7 @@ impl Token {
 
     fn get_unary_precedence_postfix(&self) -> u32 {
         match self.kind {
-            TokenKind::Period => unary(PRECEDENCE_FACTORIAL),
+            TokenKind::Bang => unary(PRECEDENCE_FACTORIAL),
             _ => 0,
         }
     }

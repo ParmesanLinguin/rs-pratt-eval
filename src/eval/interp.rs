@@ -36,7 +36,7 @@ pub fn interp(expr: &Expr) -> Result<i64, ()> {
             Ok(match &exp.op.kind {
                 TokenKind::Plus => operand,
                 TokenKind::Minus => -operand,
-                TokenKind::Period => operand >> 1,
+                TokenKind::Bang => (1..=operand).product(),
                 k => panic!("binary operation not implemented for {:?}", k)
             })
         },

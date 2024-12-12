@@ -6,7 +6,7 @@ pub enum TokenKind {
     Minus,
     Slash,
     Asterisk,
-    Period,
+    Bang,
     Caret,
     LParen,
     RParen,
