@@ -19,8 +19,6 @@ pub struct Token {
     pub pos: Position,
     pub kind: TokenKind,
     pub content: String,
-    pub leading_trivia: Vec<Trivia>,
-    pub trailing_trivia: Vec<Trivia>,
 }
 
 impl Display for Token {
@@ -44,14 +42,3 @@ impl Display for Position {
         write!(f, "({}:{})", self.ind, self.ind + self.len)
     }
 }
-
-pub enum TriviaKind {
-    Whitespace(Token),
-}
-
-pub struct Trivia {
-    pub pos: Position,
-    pub kind: TriviaKind
-}
-
-

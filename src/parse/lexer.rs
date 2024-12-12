@@ -128,8 +128,6 @@ impl<'a> Lexer<'a> {
             pos: pos, 
             kind: type_,
             content: content,
-            leading_trivia: vec!(),
-            trailing_trivia: vec!(),
         });
     }
 
