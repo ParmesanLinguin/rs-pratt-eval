@@ -26,28 +26,27 @@ pub fn repl() {
             println!("unrecognized command {}", line);
         } else {
             let lexed = lex(line);
-            if let Err(_) = lexed {
+            let Ok(lexed) = lexed else {
                 println!("failed to lex.");
                 continue;
-            }
-            let lexed = lexed.unwrap();
+            };
 
             if print_tokens { debug_tokens(&lexed); }
             
             let parsed = parse(lexed);
-            if let Err(_) = parsed {
+            let Ok(parsed) = parsed else {
                 println!("failed to parse.");
                 continue;
-            }
-            let parsed = parsed.unwrap();
+            };
+
             if print_tree { debug_tree(&parsed) };
 
             let eval = eval::interp(&parsed);
-            if let Err(_) = eval {
+            let Ok(eval) = eval else {
                 println!("failed to eval.");
                 continue;
-            }
-            let eval = eval.unwrap();
+            };
+            
             println!("{eval}")
         }
     }
