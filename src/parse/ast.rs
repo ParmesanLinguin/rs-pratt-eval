@@ -2,12 +2,6 @@ use crate::parse::token::Token;
 
 pub struct ExprNode {
     expr: Expr,
-    trivia: Vec<Trivia>,
-}
-
-pub enum Trivia {
-    Whitespace(Token),
-    Comment(Token),
 }
 
 pub enum Expr {
