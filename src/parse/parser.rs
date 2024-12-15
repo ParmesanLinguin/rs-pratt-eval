@@ -47,7 +47,7 @@ impl Token {
         match self.kind {
             TokenKind::Plus | TokenKind::Minus
                 => left_associative(PRECEDENCE_ADDITION),
-            TokenKind::Asterisk | TokenKind::Slash 
+            TokenKind::Asterisk | TokenKind::Slash | TokenKind::Percent
                 => left_associative(PRECEDENCE_MULTIPLY),
             TokenKind::Caret 
                 => right_associative(PRECEDENCE_EXPONENT),

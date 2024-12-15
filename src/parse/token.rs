@@ -8,6 +8,7 @@ pub enum TokenKind {
     Asterisk,
     Bang,
     Caret,
+    Percent,
     LParen,
     RParen,
     Integer,

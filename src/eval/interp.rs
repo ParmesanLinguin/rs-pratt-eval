@@ -26,6 +26,7 @@ pub fn interp(expr: &Expr) -> Result<i64, ()> {
                         println!("eval: div by 0"); return Err(()) 
                     }
                 },
+                TokenKind::Percent => left % right,
                 TokenKind::Asterisk => left * right,
                 TokenKind::Caret => left.pow(right.try_into().unwrap()),
                 k => panic!("binary operation not implemented for {:?}", k)

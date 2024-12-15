@@ -42,6 +42,10 @@ impl<'a> Lexer<'a> {
                     self.emit_contentful(TokenKind::Caret, pos, 1, "^".to_string()); 
                     self.consume();
                 },
+                '%' => {
+                    self.emit_contentful(TokenKind::Percent, pos, 1, "%".to_string());
+                    self.consume();
+                }
                 '(' => { 
                     self.emit_contentful(TokenKind::LParen, pos, 1, "(".to_string()); 
                     self.consume();
